@@ -4,7 +4,6 @@ import * as joi from 'joi';
 const envsSchema = joi
   .object({
     PORT: joi.number().required(),
-    DATABASE_URL: joi.string().required(),
     NATS_SERVERS: joi.string().required(),
     STRIPE_SECRET_KEY: joi.string().required(),
     WEBHOOK_SECRET: joi.string().required(),
@@ -20,7 +19,6 @@ if (error) {
 
 const envValues: {
   PORT: number;
-  DATABASE_URL: string;
   NATS_SERVERS: string;
   STRIPE_SECRET_KEY: string;
   WEBHOOK_SECRET: string;
@@ -30,7 +28,6 @@ const envValues: {
 
 export const envs = {
   PORT: envValues.PORT,
-  DATABASE_URL: envValues.DATABASE_URL,
   NATS_SERVERS: envValues.NATS_SERVERS.split(','),
   STRIPE_SECRET_KEY: envValues.STRIPE_SECRET_KEY,
   WEBHOOK_SECRET: envValues.WEBHOOK_SECRET,
