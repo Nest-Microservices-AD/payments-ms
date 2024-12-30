@@ -32,7 +32,7 @@ export class PaymentsService {
   }
 
   async stripeWebhook(req: Request, res: Response) {
-    if (!req['rawBody']) {
+    if (!req) {
       return res
         .status(400)
         .send('Webhook Error: request does not have rawBody');
